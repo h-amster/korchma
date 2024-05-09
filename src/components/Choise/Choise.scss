@@ -1,0 +1,30 @@
+.choise {
+  border-radius: 4px;
+  padding: 24px 20px;
+  background-color: $color-bg-accent;
+
+  &__title {
+    @extend %title;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    color: $color-primary;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,36 @@
+.checkbox {
+  cursor: pointer;
+
+  &__input {
+    display: none;
+  }
+
+  &__content {
+    border: 1px solid #d3c5be;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: max-content;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 14px;
+    color: $color-text;
+    transition: box-shadow $effectDuration;
+    user-select: none;
+
+    &:hover {
+      box-shadow: 0 0 8px 0 rgba(33, 9, 1, 0.16);
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &__input:checked + &__content {
+    border-color: $color-primary;
+    padding-right: 30px;
+    background-image: url('../../assets/images/cross.svg');
+    background-position: right 14px center;
+    background-repeat: no-repeat;
+  }
+}

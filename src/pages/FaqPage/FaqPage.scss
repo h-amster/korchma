@@ -1,0 +1,40 @@
+.faq {
+  &__hero {
+    background-image: url('../../assets/images/faq.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $color-bg;
+    padding-block: 166px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 68px;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  &__questions {
+    display: flex;
+    gap: 30px;
+    padding-block: 100px 100px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

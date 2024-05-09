@@ -1,0 +1,19 @@
+.checkbox-vendor {
+  cursor: pointer;
+
+  &__input {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 14px;
+    color: $color-text;
+    user-select: none;
+  }
+}

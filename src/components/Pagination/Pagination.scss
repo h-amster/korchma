@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 30px 24px;
+
+  &__button {
+    border: none;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    color: $color-text;
+    background-color: transparent;
+    transition: color $effectDuration;
+    cursor: pointer;
+
+    &:disabled {
+      color: #d3c5be;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__link {
+    border: none;
+    padding: 0;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 24px;
+    color: #d3c5be;
+    background-color: transparent;
+    transition: color $effectDuration;
+    cursor: pointer;
+
+    &--active {
+      color: $color-primary;
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}

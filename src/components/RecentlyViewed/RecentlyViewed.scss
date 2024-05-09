@@ -1,0 +1,20 @@
+.recently-viewed {
+  border-radius: 4px;
+  padding: 24px 20px;
+  background-color: $color-bg-accent;
+
+  &__title {
+    margin-bottom: 32px;
+
+    @extend %title;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__card {
+    grid-column: span 1;
+  }
+}

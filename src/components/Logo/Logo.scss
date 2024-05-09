@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  width: fit-content;
+  text-decoration: none;
+  transition: transform $effectDuration;
+
+  &__path {
+    fill: $color-secondary;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

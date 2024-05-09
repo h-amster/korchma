@@ -1,0 +1,57 @@
+.map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 119px 89px;
+
+  &__attached {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 16px 32px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: $color-bg-accent;
+    opacity: 0;
+    transition: opacity $effectDuration;
+    gap: 16px;
+  }
+
+  &__attached-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 8px;
+  }
+
+  &__attached-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: $color-text;
+    gap: 8px;
+  }
+
+  &__attached-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__path {
+    stroke: $color-primary;
+    stroke-width: 2px;
+    transition: fill 0.3s;
+
+    &:hover {
+      fill: #b66233;
+    }
+  }
+
+  &__link:hover + &__attached {
+    opacity: 1;
+  }
+}

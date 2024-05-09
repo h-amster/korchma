@@ -1,0 +1,41 @@
+.categories {
+  background-color: $color-primary;
+
+  &__container {
+    @include page-grid;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 6;
+    gap: 32px;
+    padding-block: 64px 65px;
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 68px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ecddd5;
+    transition: color, transform;
+    transition-duration: $effectDuration;
+
+    &:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+  }
+
+  &__img {
+    display: block;
+    grid-column: 6 / -1;
+    object-fit: contain;
+    object-position: center;
+  }
+}

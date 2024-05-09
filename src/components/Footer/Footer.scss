@@ -1,0 +1,116 @@
+.footer {
+  font-family: Montserrat, sans-serif;
+  color: $color-bg-accent;
+  background-color: $color-text;
+  padding-block: 61px 77px;
+
+  &__container {
+    @include page-grid;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 4;
+    gap: 85px;
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: $color-bg-accent;
+  }
+
+  &__copy {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: $color-bg-accent;
+  }
+
+  &__catalog {
+    grid-column: 5 / 7;
+  }
+
+  &__info {
+    grid-column: 8 / 10;
+  }
+
+  &__contacts {
+    grid-column: -3 / -1;
+  }
+
+  &__contacts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &__contacts-list {
+    display: flex;
+    flex-direction: column;
+
+    &--1 {
+      gap: 12px;
+    }
+
+    &--2 {
+      gap: 14px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 23px;
+    padding-top: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-bg-accent;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &--grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 30px;
+    }
+  }
+
+  &__list-item {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-bg-accent;
+
+    &--small {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: $color-bg-accent;
+
+    &::after {
+      transform-origin: center;
+    }
+
+    &--instagram {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 11px;
+    }
+
+    @extend %underline;
+  }
+}
