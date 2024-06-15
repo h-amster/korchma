@@ -73,4 +73,14 @@
   &--active &__content {
     opacity: 1;
   }
+
+  &--error &__btn {
+    border-color: #d4af37;
+    box-shadow: 0 0 4px 0 rgba(182, 98, 51, 0.5);
+  }
+
+  &--error &__content {
+    border-color: #d4af37;
+    box-shadow: 0 0 4px 0 rgba(182, 98, 51, 0.5);
+  }
 }

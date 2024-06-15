@@ -9,6 +9,8 @@ import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { ProductDetailsPage } from './pages/ProductDetailsPage/ProductDetailsPage';
 import { About } from './pages/About/About';
 import { ScrollToTop } from './utils/ScrollToTop';
+import { VendorDetailsPage } from './pages/VendorDetailsPage/VendorDetailsPage';
+import { VendorsPage } from './pages/VendorsPage/VendorsPage';
 
 export const Root: React.FC = () => {
   return (
@@ -21,6 +23,12 @@ export const Root: React.FC = () => {
             <Route index element={<CatalogPage />} />
             <Route path=":productId" element={<ProductDetailsPage />} />
           </Route>
+          <Route path="vendorslist">
+            <Route index element={<NotFoundPage />} />
+            <Route path=":vendorId" element={<VendorDetailsPage />} />
+          </Route>
+
+          <Route path="vendors" element={<VendorsPage />} />
           <Route path="about" element={<About />} />
           <Route path="faq" element={<FaqPage />} />
           <Route path="favorites" element={<FavoritesPage />} />

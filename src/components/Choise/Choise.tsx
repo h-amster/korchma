@@ -24,7 +24,11 @@ export const Choise: React.FC<Props> = ({ className = '' }) => {
       <header className="choise__header">
         <h2 className="choise__title">ВИБІР КОРИСТУВАЧІВ</h2>
 
-        <Link to="/catalog?sort=З+найвищим+рейтингом" className="choise__link">
+        <Link
+          to="/catalog?sort=З+найвищим+рейтингом"
+          className="choise__link"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           Показати більше &gt;
         </Link>
       </header>

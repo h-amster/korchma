@@ -38,7 +38,7 @@
     padding-inline: 21px 50px;
 
     &:placeholder-shown {
-      color: #d3c5be;
+      color: #90a0b0;
     }
 
     &:focus {
@@ -57,21 +57,21 @@
   }
 
   &__input-svg {
-    stroke: #210901;
+    stroke: $color-text;
     transition: stroke $effectDuration;
   }
 
   &__input-button {
-    border: 3px solid #fff;
+    border: 3px solid $color-bg-accent;
     border-radius: 0 4px 4px 0;
     padding: 11px 24px;
     height: 52px;
-    background-color: #b66233;
+    background-color: #d4af37;
     transition: background-color $effectDuration;
     cursor: pointer;
 
     &:disabled {
-      background-color: #d3c5be;
+      background-color: #90a0b0;
       cursor: default;
     }
   }
@@ -122,7 +122,7 @@
     font-size: 24px;
     line-height: 29px;
     text-transform: uppercase;
-    color: $color-accent;
+    color: $color-primary;
 
     &--small-margin {
       margin-bottom: 8px;
@@ -146,7 +146,7 @@
     font-size: 16px;
     line-height: 20px;
     text-decoration-line: underline;
-    color: $color-accent;
+    color: $color-primary;
     background-color: transparent;
     cursor: pointer;
   }
@@ -171,7 +171,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: $color-accent;
+    color: $color-primary;
 
     &--hidden {
       display: none;
@@ -182,7 +182,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #d3c5be;
+    border: 1px solid #90a0b0;
     border-radius: 8px;
     padding: 6px 16px;
     width: max-content;
@@ -268,6 +268,6 @@
   }
 
   &__input-clear:disabled &__input-svg {
-    stroke: #d3c5be;
+    stroke: #90a0b0;
   }
 }

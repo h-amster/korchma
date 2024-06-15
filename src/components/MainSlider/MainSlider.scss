@@ -1,5 +1,5 @@
 .swiper-pagination-bullet {
-  background-color: #ecddd5;
+  background-color: $color-bg;
   opacity: 1;
 }
 
@@ -9,4 +9,11 @@
 
 .swiper-pagination {
   bottom: 24px !important;
+}
+
+.swiper {
+  &__img {
+    width: 100%;
+    object-fit: contain;
+  }
 }

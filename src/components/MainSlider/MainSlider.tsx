@@ -6,10 +6,10 @@ import uuid from 'react-uuid';
 import { Autoplay, Pagination } from 'swiper/modules';
 
 type Props = {
-  images: string[];
+  slides: { img: string; link: string }[];
 };
 
-export const MainSlider: React.FC<Props> = ({ images }) => {
+export const MainSlider: React.FC<Props> = ({ slides }) => {
   return (
     <Swiper
       allowTouchMove={false}
@@ -23,9 +23,11 @@ export const MainSlider: React.FC<Props> = ({ images }) => {
       modules={[Pagination, Autoplay]}
       pagination={{ clickable: true }}
     >
-      {images.map(img => (
+      {slides.map(slide => (
         <SwiperSlide key={uuid()}>
-          <img src={img} alt="Slider Slide" />
+          <a href={slide.link} target="_blank" rel="noreferrer">
+            <img src={slide.img} alt="Slider Slide" className="swiper__img" />
+          </a>
         </SwiperSlide>
       ))}
     </Swiper>

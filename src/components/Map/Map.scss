@@ -20,7 +20,11 @@
   &__attached-info {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: $color-primary;
     gap: 8px;
   }
 
@@ -47,7 +51,7 @@
     transition: fill 0.3s;
 
     &:hover {
-      fill: #b66233;
+      fill: #d4af37;
     }
   }
 

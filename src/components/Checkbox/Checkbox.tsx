@@ -6,6 +6,7 @@ type Props = {
   title: string;
   isHidden?: boolean;
   checked: boolean;
+  hasError?: boolean;
   onChange: () => void;
 };
 
@@ -13,6 +14,7 @@ export const Checkbox: React.FC<Props> = ({
   title,
   isHidden = false,
   checked,
+  hasError,
   onChange,
 }) => {
   const isCheckboxHidden = isHidden && !checked;
@@ -21,6 +23,7 @@ export const Checkbox: React.FC<Props> = ({
     <label
       className={classNames('checkbox', {
         'checkbox--hidden': isCheckboxHidden,
+        'checkbox--error': hasError,
       })}
     >
       <input

@@ -9,6 +9,8 @@ type Props = {
   selectedOption: string;
   onSelect: (value: any) => void;
   className?: string;
+  contentClassName?: string;
+  hasError?: boolean;
 };
 
 export const Dropdown: React.FC<Props> = ({
@@ -16,6 +18,8 @@ export const Dropdown: React.FC<Props> = ({
   selectedOption,
   onSelect,
   className = '',
+  contentClassName = '',
+  hasError,
 }) => {
   const [isActive, setIsActive] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -41,7 +45,7 @@ export const Dropdown: React.FC<Props> = ({
     <div
       className={classNames('dropdown', {
         'dropdown--active': isActive,
-        [className]: className,
+        'dropdown--error': hasError,
       })}
       ref={dropdownRef}
     >
@@ -50,7 +54,9 @@ export const Dropdown: React.FC<Props> = ({
         onClick={() => {
           setIsActive(!isActive);
         }}
-        className="dropdown__btn"
+        className={classNames('dropdown__btn', {
+          [className]: className,
+        })}
       >
         <span className="dropdown__btn-text">{selectedOption}</span>
 
@@ -66,14 +72,16 @@ export const Dropdown: React.FC<Props> = ({
         >
           <path
             d="M1 1.5L7 7.5L13 1.5"
-            stroke="#803308"
+            stroke="#036"
             strokeWidth="2"
             strokeLinecap="round"
           />
         </svg>
       </button>
       <ul
-        className="dropdown__content"
+        className={classNames('dropdown__content', {
+          [contentClassName]: contentClassName,
+        })}
         style={{ display: isActive ? 'flex' : 'none' }}
       >
         {options.map(item => (

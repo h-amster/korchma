@@ -6,15 +6,16 @@ import { Container } from '../../components/Container/Container';
 import { Choise } from '../../components/Choise/Choise';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { SortFavoriteValues } from '../../types/SortFavoriteValues';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { getSearchWith } from '../../utils/getSearchWith';
 import { FavoriteDrink } from '../../types/FavoriteDrink';
 import { Drink } from '../../types/Drink';
 import * as favoritesActions from '../../store/favoritesSlice';
+import { useEffect } from 'react';
 
 export const FavoritesPage: React.FC = () => {
   const dispatch = useAppDispatch();
-
+  const navigate = useNavigate();
   const sortOptions = Object.values(SortFavoriteValues);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -54,7 +55,7 @@ export const FavoritesPage: React.FC = () => {
   }
 
   const itemsPerPage = 8;
-  const total = drinks.length;
+  const total = favoritesDrinks.length;
   const firstItem = (page - 1) * itemsPerPage;
   const lastItem =
     firstItem + itemsPerPage < total ? firstItem + itemsPerPage : total;
@@ -62,6 +63,14 @@ export const FavoritesPage: React.FC = () => {
   const preparedItems = [...favoritesDrinks]
     .slice(firstItem, lastItem)
     .sort(sortGoods(sortBy as SortFavoriteValues));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
+  if (total <= itemsPerPage && page !== 1) {
+    navigate('/favorites');
+  }
 
   return (
     <Container>
@@ -110,7 +119,7 @@ export const FavoritesPage: React.FC = () => {
                 if (newPage === 1) {
                   setSearchWith({ page: null });
                 } else {
-                  setSearchWith({ query: newPage });
+                  setSearchWith({ page: newPage });
                 }
               }}
             />

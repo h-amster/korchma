@@ -1,0 +1,30 @@
+.input {
+  border: 1px solid #90a0b0;
+  border-radius: 4px;
+  padding: 17px 32px;
+  max-width: 496px;
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-text;
+  background-color: transparent;
+  transition: border $effectDuration;
+
+  &::placeholder {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    color: #90a0b0;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-primary;
+  }
+
+  &--error {
+    border-color: #d4af37;
+    box-shadow: 0 0 4px 0 rgba(182, 98, 51, 0.5);
+  }
+}

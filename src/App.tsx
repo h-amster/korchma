@@ -11,8 +11,12 @@ import * as regionsActions from './store/regionsSlice';
 import { useEffect } from 'react';
 import { PageLoader } from './components/PageLoader/PageLoader';
 import { ErrorScreen } from './components/ErrorScreen/ErrorScreen';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { Modal } from './components/Modal/Modal';
 
 export const App = () => {
+  const [isAdult, setIsAdult] = useLocalStorage('isAdult', false);
+
   const dispatch = useAppDispatch();
 
   const drinks = useAppSelector(state => state.drinks);
@@ -60,6 +64,30 @@ export const App = () => {
       </main>
 
       <Footer />
+
+      {!isAdult && (
+        <Modal>
+          <div className="app__modal-content">
+            <h2 className="app__modal-title">ВІТАЄМО!</h2>
+
+            <p className="app__modal-subtitle">Вам вже виповнилося 18 років?</p>
+
+            <div className="app__modal-buttons">
+              <button
+                className="app__modal-button"
+                onClick={() => {
+                  setIsAdult(true);
+                }}
+              >
+                Так
+              </button>
+              <a href="https://www.google.com/" className="app__modal-button">
+                Ні
+              </a>
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

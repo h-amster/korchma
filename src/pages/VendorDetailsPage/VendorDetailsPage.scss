@@ -1,0 +1,144 @@
+.vendor {
+  padding-block: 64px 100px;
+
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+
+  &__logo {
+    max-width: 50%;
+    object-fit: contain;
+    object-position: center;
+    mix-blend-mode: multiply;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 68px;
+    color: $color-primary;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+  }
+
+  &__details-item {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: right;
+    color: $color-text;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    gap: 100px;
+  }
+
+  &__info-item {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: right;
+    color: $color-text;
+  }
+
+  &__img {
+    margin-bottom: 100px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__info-block {
+    @include page-grid;
+  }
+
+  &__info-title {
+    grid-column: 1 / 5;
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: $color-primary;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-text;
+
+    &::after {
+      transform-origin: center;
+    }
+
+    @extend %underline;
+  }
+
+  &__info-paragraph {
+    grid-column: 6 / -1;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-text;
+
+    &--flex {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &__contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__contact-title {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-text;
+  }
+
+  &__contact-item {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-text;
+
+    &--soc {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__social {
+    display: flex;
+  }
+
+  &__social-title {
+    width: 110px;
+  }
+
+  &__social-item {
+    color: black;
+  }
+}

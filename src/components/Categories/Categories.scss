@@ -1,5 +1,5 @@
 .categories {
-  background-color: $color-primary;
+  position: relative;
 
   &__container {
     @include page-grid;
@@ -14,6 +14,8 @@
   }
 
   &__link {
+    position: relative;
+    z-index: 2;
     display: block;
     width: max-content;
     font-family: Montserrat, sans-serif;
@@ -22,20 +24,29 @@
     line-height: 68px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #ecddd5;
+    color: $color-bg;
     transition: color, transform;
     transition-duration: $effectDuration;
 
     &:hover {
-      color: #fff;
+      color: $color-bg-accent;
       transform: scale(1.1);
     }
   }
 
   &__img {
+    position: absolute;
+    z-index: 1;
     display: block;
-    grid-column: 6 / -1;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
     object-position: center;
+    inset: 0;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 }

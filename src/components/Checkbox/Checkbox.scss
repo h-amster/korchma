@@ -1,4 +1,7 @@
 .checkbox {
+  border-radius: 8px;
+  transition-property: box-shadow, border-color;
+  transition-duration: $effectDuration;
   cursor: pointer;
 
   &__input {
@@ -6,7 +9,7 @@
   }
 
   &__content {
-    border: 1px solid #d3c5be;
+    border: 1px solid #90a0b0;
     border-radius: 8px;
     padding: 8px 16px;
     width: max-content;
@@ -24,6 +27,11 @@
 
   &--hidden {
     display: none;
+  }
+
+  &--error &__content {
+    border-color: #d4af37;
+    box-shadow: 0 0 4px 0 rgba(182, 98, 51, 0.5);
   }
 
   &__input:checked + &__content {

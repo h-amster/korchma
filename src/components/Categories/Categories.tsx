@@ -3,12 +3,12 @@ import './Categories.scss';
 import { Container } from '../Container/Container';
 import classNames from 'classnames';
 
-import beer from '../../assets/images/categories/beer.jpg';
-import cider from '../../assets/images/categories/cider.jpg';
-import combucha from '../../assets/images/categories/combucha.jpg';
-import liquers from '../../assets/images/categories/liquers.jpg';
-import rosolio from '../../assets/images/categories/rosolio.jpg';
-import wine from '../../assets/images/categories/wine.jpg';
+import beer from '../../assets/images/categories/beer.png';
+import cider from '../../assets/images/categories/cider.png';
+import combucha from '../../assets/images/categories/combucha.png';
+import liquers from '../../assets/images/categories/liquers.png';
+import rosolio from '../../assets/images/categories/rosolio.png';
+import wine from '../../assets/images/categories/wine.png';
 import { useState } from 'react';
 
 type Props = {

@@ -25,37 +25,61 @@ export const Footer: React.FC = () => {
 
           <ul className="footer__list footer__list--grid">
             <li className="footer__list-item">
-              <Link className="footer__link" to="/catalog?category=Пиво">
+              <Link
+                className="footer__link"
+                to="/catalog?category=Пиво"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Пиво
               </Link>
             </li>
 
             <li className="footer__list-item">
-              <Link className="footer__link" to="/catalog?category=Сидр">
+              <Link
+                className="footer__link"
+                to="/catalog?category=Сидр"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Сидр
               </Link>
             </li>
 
             <li className="footer__list-item">
-              <Link className="footer__link" to="/catalog?category=Вино">
+              <Link
+                className="footer__link"
+                to="/catalog?category=Вино"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Вино
               </Link>
             </li>
 
             <li className="footer__list-item">
-              <Link className="footer__link" to="/catalog?category=Наливки">
+              <Link
+                className="footer__link"
+                to="/catalog?category=Наливки"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Наливки
               </Link>
             </li>
 
             <li className="footer__list-item">
-              <Link className="footer__link" to="/catalog?category=Лікери">
+              <Link
+                className="footer__link"
+                to="/catalog?category=Лікери"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Лікери
               </Link>
             </li>
 
             <li className="footer__list-item">
-              <Link className="footer__link" to="/catalog?category=Комбуча">
+              <Link
+                className="footer__link"
+                to="/catalog?category=Комбуча"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Комбуча
               </Link>
             </li>

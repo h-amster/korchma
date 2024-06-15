@@ -2,12 +2,18 @@
 /* eslint-disable max-len */
 import './Card.scss';
 import beer from '../../assets/images/card/beer.svg';
+import cider from '../../assets/images/card/cider.svg';
+import kombucha from '../../assets/images/card/kombucha.svg';
+import likers from '../../assets/images/card/likers.svg';
+import rosolio from '../../assets/images/card/rosolio.svg';
+import wine from '../../assets/images/card/wine.svg';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { Drink } from '../../types/Drink';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import * as favoritesActions from '../../store/favoritesSlice';
 import { FavItem } from '../../types/FavItem';
+import { Stars } from '../Stars/Stars';
 
 type Props = {
   product: Drink;
@@ -33,6 +39,21 @@ export const Card: React.FC<Props> = ({ product, classname = '' }) => {
     switch (cat) {
       case 1:
         return beer;
+
+      case 2:
+        return wine;
+
+      case 3:
+        return rosolio;
+
+      case 4:
+        return cider;
+
+      case 5:
+        return kombucha;
+
+      case 6:
+        return likers;
     }
   };
 
@@ -54,6 +75,9 @@ export const Card: React.FC<Props> = ({ product, classname = '' }) => {
       dispatch(favoritesActions.addToFavorites(itemId));
     }
   };
+
+  const normalizedName = name.length > 13 ? name.slice(0, 12) + '…' : name;
+  const formattedPrice = Number(price).toFixed(2);
 
   return (
     <article
@@ -77,22 +101,20 @@ export const Card: React.FC<Props> = ({ product, classname = '' }) => {
 
       <h3 className="card__title">
         <Link className="card__link" to={`/catalog/${id}`}>
-          {name}
+          {normalizedName}
         </Link>
       </h3>
 
-      <p className="card__manufacturer">{producer.name}</p>
+      <p className="card__manufacturer">
+        <Link className="card__link" to={`/vendorslist/${producer.id}`}>
+          {producer.name}
+        </Link>
+      </p>
 
       <p className="card__capacity">{capacity}</p>
 
       <div className="card__block">
-        <div className={`card__stars card__stars--${roundedRating}`}>
-          <div className="card__star"></div>
-          <div className="card__star"></div>
-          <div className="card__star"></div>
-          <div className="card__star"></div>
-          <div className="card__star"></div>
-        </div>
+        <Stars rating={roundedRating} />
         <div className="card__comments">
           <svg
             width="24"
@@ -115,7 +137,7 @@ export const Card: React.FC<Props> = ({ product, classname = '' }) => {
         </div>
       </div>
 
-      <div className="card__price">{+price} грн</div>
+      <div className="card__price">{formattedPrice} грн</div>
 
       <div className="card__buttons">
         <Link className="card__main-button" to={`/catalog/${id}`}>

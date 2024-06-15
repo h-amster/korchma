@@ -9,4 +9,6 @@ export const httpClient = {
   getProducers: () => axios.get(`${BASE_URL}/producer/`).then(res => res.data),
   getRegions: () => axios.get(`${BASE_URL}/region/`).then(res => res.data),
   getDrinks: () => axios.get(`${BASE_URL}/drink/`).then(res => res.data),
+  getDrinkById: (id: number) =>
+    axios.get(`${BASE_URL}/drink/${id}`).then(res => res.data),
 };

@@ -6,5 +6,5 @@ export interface Comment {
   rating: number;
   advantages: string;
   disadvantages: string;
-  drink: 1;
+  drink: number;
 }

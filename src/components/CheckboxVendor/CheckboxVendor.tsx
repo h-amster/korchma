@@ -23,14 +23,14 @@ export const CheckboxVendor: React.FC<Props> = ({
     >
       <path
         d="M6 8.5L9 11.5L17 3.5"
-        stroke="#803308"
+        stroke="#036"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M17 9.5V15.5C17 16.0304 16.7893 16.5391 16.4142 16.9142C16.0391 17.2893 15.5304 17.5 15 17.5H3C2.46957 17.5 1.96086 17.2893 1.58579 16.9142C1.21071 16.5391 1 16.0304 1 15.5V3.5C1 2.96957 1.21071 2.46086 1.58579 2.08579C1.96086 1.71071 2.46957 1.5 3 1.5H12"
-        stroke="#803308"
+        stroke="#036"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

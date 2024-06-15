@@ -1,14 +1,14 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Drink } from '../types/Drink';
 import { httpClient } from '../utils/httpClient';
+import { Vendor } from '../types/Vendor';
 
 export const init = createAsyncThunk('producers/fetch', () => {
   return httpClient.getProducers();
 });
 
 type ProducersState = {
-  producers: Drink[];
+  producers: Vendor[];
   isLoading: boolean;
   hasError: boolean;
 };

@@ -3,7 +3,7 @@
   border-radius: 8px;
   padding: 24px 20px;
   width: 286px;
-  background-color: #fff;
+  background-color: $color-bg-accent;
   transition: box-shadow $effectDuration;
 
   &__img-wrapper {
@@ -17,7 +17,7 @@
   &__img {
     width: 248px;
     height: 240px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 
@@ -109,27 +109,6 @@
     gap: 11px;
   }
 
-  &__star {
-    width: 16px;
-    height: 16px;
-    background-image: url('../../assets/images/star.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  &__stars {
-    display: flex;
-
-    &--1 .card__star:nth-child(-n + 1),
-    &--2 .card__star:nth-child(-n + 2),
-    &--3 .card__star:nth-child(-n + 3),
-    &--4 .card__star:nth-child(-n + 4),
-    &--5 .card__star:nth-child(-n + 5) {
-      background-image: url('../../assets/images/star-active.svg');
-    }
-  }
-
   &__comments {
     display: flex;
     align-items: center;
@@ -202,7 +181,7 @@
   }
 
   &:hover {
-    box-shadow: 0 0 32px 0 rgba(33, 9, 1, 0.24);
+    box-shadow: 0 0 32px 0 rgba(1, 10, 33, 0.2);
   }
 
   &--favorite &__favorite-path--heart {

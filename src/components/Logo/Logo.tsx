@@ -4,7 +4,7 @@ import './Logo.scss';
 
 export const Logo: React.FC = () => {
   return (
-    <Link className="logo" to="/">
+    <Link className="logo" to="/" onClick={() => window.scrollTo(0, 0)}>
       <svg
         className="logo__svg"
         width="196"

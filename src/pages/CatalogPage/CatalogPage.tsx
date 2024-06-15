@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Card } from '../../components/Card/Card';
 import { Checkbox } from '../../components/Checkbox/Checkbox';
 import { CheckboxVendor } from '../../components/CheckboxVendor/CheckboxVendor';
@@ -91,13 +91,6 @@ export const CatalogPage: React.FC = () => {
 
   const handleAddRegionClick = () => setIsRegionsHidden(false);
 
-  const page = Number(searchParams.get('page')) || 1;
-  const itemsPerPage = 9;
-  const total = drinksFromServer.length;
-  const firstItem = (page - 1) * itemsPerPage;
-  const lastItem =
-    firstItem + itemsPerPage < total ? firstItem + itemsPerPage : total;
-
   const preparedRegions = [...regionsFromServer].sort((reg1, reg2) => {
     if (
       regionFilters.includes(reg2.name) &&
@@ -136,7 +129,6 @@ export const CatalogPage: React.FC = () => {
 
   const preparedItems = useMemo(() => {
     return [...drinksFromServer]
-      .slice(firstItem, lastItem)
       .filter(
         item =>
           item.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -165,8 +157,6 @@ export const CatalogPage: React.FC = () => {
       .sort(sortGoods(sortBy as SortValues));
   }, [
     drinksFromServer,
-    firstItem,
-    lastItem,
     sortBy,
     query,
     volumeFilters,
@@ -174,6 +164,23 @@ export const CatalogPage: React.FC = () => {
     categoryFilters,
     vendorFilters,
   ]);
+
+  const page = Number(searchParams.get('page')) || 1;
+  const itemsPerPage = 9;
+  const total = preparedItems.length;
+  const firstItem = (page - 1) * itemsPerPage;
+  const lastItem =
+    firstItem + itemsPerPage < total ? firstItem + itemsPerPage : total;
+
+  const slicedItems = preparedItems.slice(firstItem, lastItem);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
+  if (total <= itemsPerPage && page !== 1) {
+    setSearchWith({ page: null });
+  }
 
   return (
     <div className="catalog">
@@ -191,6 +198,7 @@ export const CatalogPage: React.FC = () => {
             />
 
             <button
+              type="button"
               className="catalog__input-clear"
               disabled={inputValue.length === 0}
               onClick={() => setInputValue('')}
@@ -326,7 +334,7 @@ export const CatalogPage: React.FC = () => {
                       >
                         <path
                           d="M5.24264 1.25736L5.24264 5.5M5.24264 5.5L9.48528 5.5M5.24264 5.5L1 5.5M5.24264 5.5L5.24264 9.74264"
-                          stroke="#210901"
+                          stroke="#0f1720"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                         />
@@ -396,7 +404,7 @@ export const CatalogPage: React.FC = () => {
               </>
 
               <div className="catalog__cards">
-                {preparedItems.map(item => (
+                {slicedItems.map(item => (
                   <Card
                     key={item.id}
                     product={item}
@@ -414,7 +422,7 @@ export const CatalogPage: React.FC = () => {
                 if (newPage === 1) {
                   setSearchWith({ page: null });
                 } else {
-                  setSearchWith({ query: newPage });
+                  setSearchWith({ page: newPage });
                 }
               }}
             />

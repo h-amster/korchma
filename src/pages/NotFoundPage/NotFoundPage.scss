@@ -1,9 +1,5 @@
 .not-found {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  inset: 0;
+  padding-block: 10%;
 
   &__title {
     margin-bottom: 36px;

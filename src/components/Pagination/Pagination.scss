@@ -15,7 +15,7 @@
     cursor: pointer;
 
     &:disabled {
-      color: #d3c5be;
+      color: #90a0b0;
     }
   }
 
@@ -30,7 +30,7 @@
     font-family: $font-family;
     font-weight: 500;
     font-size: 24px;
-    color: #d3c5be;
+    color: #90a0b0;
     background-color: transparent;
     transition: color $effectDuration;
     cursor: pointer;
